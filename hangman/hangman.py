@@ -145,10 +145,96 @@ def hangman(secret_word):
         if guesses <= 0:
             print('Sorry, you ran out of guesses. The word was {0}.'.format(secret_word))
             print('Your total score for this game is: {0}'.format(guesses*(len(secret_word)+len(set(secret_word)))))
-
+        print_man(guesses)
+            
 def hangman_with_help(secret_word):
     new = random.randint(0, len(secret_word) -1)
     return secret_word[new]
+
+def print_man(guesses):
+    if guesses == 8:
+        print(" _________     ")
+        print("|         |    ")
+        print("|              ")
+        print("|              ")
+        print("|              ")
+        print("|              ")
+        print("|              ")
+        print("|              ")
+    elif guesses == 7:
+        print(" _________     ")
+        print("|         |    ")
+        print("|         0    ")
+        print("|              ")
+        print("|              ")
+        print("|              ")
+        print("|              ")
+        print("|              ")
+    elif guesses == 6:
+        print(" _________     ")
+        print("|         |    ")
+        print("|         0    ")
+        print("|         |    ")
+        print("|         |    ")
+        print("|              ")
+        print("|              ")
+        print("|              ")
+    elif guesses == 5:
+        print(" _________     ")
+        print("|         |    ")
+        print("|         0    ")
+        print("|        /|    ")
+        print("|         |    ")
+        print("|              ")
+        print("|              ")
+        print("|              ")
+    elif guesses == 4:
+        print(" _________     ")
+        print("|         |    ")
+        print("|         0    ")
+        print("|        /|\   ")
+        print("|         |    ")
+        print("|              ")
+        print("|              ")
+        print("|              ")
+    elif guesses == 3:
+        print(" _________     ")
+        print("|         |    ")
+        print("|         0    ")
+        print("|        /|\   ")
+        print("|         |    ")
+        print("|        /     ")
+        print("|       /      ")
+        print("|              ")
+    elif guesses == 2:
+        print(" _________     ")
+        print("|         |    ")
+        print("|         0    ")
+        print("|        /|\   ")
+        print("|         |    ")
+        print("|        / \   ")
+        print("|       /   \  ")
+        print("|              ")        
+    elif guesses == 1:
+        print(" _________     ")
+        print("|         |    ")
+        print("|         0    ")
+        print("|        /|\   ")
+        print("|       / |    ")
+        print("|        / \   ")
+        print("|       /   \  ")
+        print("|              ")
+    elif guesses <= 0:
+        print(" _________     ")
+        print("|         |    ")
+        print("|         0    ")
+        print("|        /|\   ")
+        print("|       / | \  ")
+        print("|        / \   ")
+        print("|       /   \  ")
+        print("|              ")
+
+
 
 
 if __name__ == "__main__":
