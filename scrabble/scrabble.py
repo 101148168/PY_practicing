@@ -1,6 +1,5 @@
 # Name          : Code-Egg
 
-
 import math
 
 import random
