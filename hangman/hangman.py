@@ -69,6 +69,7 @@ def get_available_letters(letters_guessed):
 def hangman(secret_word):
     guesses = 8
     warnings = 3
+    special_use = 1
     letters_guessed = []
     a_z = string.ascii_lowercase
     vowels = ['a','e','i','o','u']
@@ -88,11 +89,12 @@ def hangman(secret_word):
             print("You have {0} guess left.".format(guesses))
             print('Available letters: ', get_available_letters(letters_guessed))
         letters_input = input('Please guess a letter: ').lower()
-        if letters_input == '*' and guesses >= 2:
+        if letters_input == '*' and guesses >= 2 and special_use > 0:
             reveal_word = hangman_with_help(secret_word)
             if reveal_word not in letters_guessed:
                 print('Letter revealed: {0}'.format(reveal_word))
                 guesses -= 2
+                special_use -= 1
                 letters_input = reveal_word
             else:
                 reveal_word = hangman_with_help(secret_word)
